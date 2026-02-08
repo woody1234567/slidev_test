@@ -1,0 +1,272 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage{lmodern}
+\usepackage{mathabx}
+
+\usetheme{Madrid} % 可選其他主題：e.g., Warsaw, Berkeley, etc.
+\usecolortheme{default}
+\setbeamertemplate{caption}[numbered]% Number float-like environments
+% customize the caption
+\setbeamerfont{caption}{size=\footnotesize}
+% \setbeamercolor{caption}{fg=blue}
+% \setbeamercolor{caption name}{fg=red}
+
+\title{Differentiation Rules}
+\subtitle{section3.6: Derivatives of Logarithmic and Inverse Trigonometric Functions}
+\author{Hsu Chun-Wei}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+%=====================================================================
+\begin{frame}{Derivative of $\log_b x$}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Logarithmic Derivative Formula}]
+  
+\begin{equation}
+\label{Derivative of log_b(x)}
+\frac{d}{dx} (\log_b x) = \frac{1}{x \ln b}
+\end{equation}
+
+\end{tcolorbox}
+
+\textcolor{red}{\textbf{PROOF}} \quad Let $y = \log_b x$. Then
+\[
+b^y = x
+\]
+
+Differentiating this equation implicitly with respect to $x$, we get:
+\[
+(b^y \ln b) \frac{dy}{dx} = 1
+\]
+
+and so
+\[
+\frac{dy}{dx} = \frac{1}{b^y \ln b} = \frac{1}{x \ln b}
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{}
+
+If we put $b = e$ in Equation \ref{Derivative of log_b(x)}, then the factor $\ln b$ on the right becomes $\ln e = 1$, and we get the formula for the derivative of the natural logarithmic function $\log_e x = \ln x$:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{The derivative of the natural logarithmic function}]
+  
+\[
+\frac{d}{dx} (\ln x) = \frac{1}{x}
+\]
+
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Example: Derivative of $\ln|x|$}
+
+\textcolor{blue}{\textbf{EXAMPLE}} \quad Find $f'(x)$ if $f(x) = \ln |x|$.
+
+\vspace{0.5em}
+\textcolor{blue}{\textbf{SOLUTION}} \quad Since
+\[
+f(x) = 
+\begin{cases}
+\ln x & \text{if } x > 0 \\
+\ln(-x) & \text{if } x < 0
+\end{cases}
+\]
+
+it follows that
+\[
+f'(x) = 
+\begin{cases}
+\frac{1}{x} & \text{if } x > 0 \\
+\frac{1}{-x}(-1) = \frac{1}{x} & \text{if } x < 0
+\end{cases}
+\]
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Derivative of $\ln|x|$}]
+\[
+\frac{d}{dx} \ln |x| = \frac{1}{x}
+\]
+\end{tcolorbox}
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Logarithmic Differentiation}
+
+The calculation of derivatives of complicated functions involving products, quotients, or powers can often be simplified by taking logarithms. The method used is called \textbf{logarithmic differentiation}.
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Steps in Logarithmic Differentiation}]
+
+\begin{enumerate}
+  \item Take natural logarithms of both sides of an equation $y = f(x)$ and use the Laws of Logarithms to expand the expression.
+  \item Differentiate implicitly with respect to $x$.
+  \item Solve the resulting equation for $y'$ and replace $y$ by $f(x)$.
+\end{enumerate}
+
+\end{tcolorbox}
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Logarithmic Differentiation Example}
+\textcolor{blue}{\textbf{EXAMPLE}} \quad Differentiate 
+\[
+y = \frac{x^{3/4} \sqrt{x^2 + 1}}{(3x + 2)^5}
+\]
+
+\textcolor{blue}{\textbf{SOLUTION}} \quad
+We take logarithms of both sides and use the Laws of Logarithms to simplify:
+\[
+\ln y = \frac{3}{4} \ln x + \frac{1}{2} \ln(x^2 + 1) - 5 \ln(3x + 2)
+\]
+
+Differentiating implicitly with respect to $x$:
+\[
+\frac{1}{y} \frac{dy}{dx} = \frac{3}{4} \cdot \frac{1}{x}
++ \frac{1}{2} \cdot \frac{2x}{x^2 + 1}
+- 5 \cdot \frac{3}{3x + 2}
+\]
+
+Solving for $\frac{dy}{dx}$:
+\[
+\frac{dy}{dx} = y \left( \frac{3}{4x} + \frac{x}{x^2 + 1} - \frac{15}{3x + 2} \right) = \frac{x^{3/4} \sqrt{x^2 + 1}}{(3x + 2)^5}
+\left( \frac{3}{4x} + \frac{x}{x^2 + 1} - \frac{15}{3x + 2} \right)
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{The Number $e$ as a Limit}
+
+We have shown that if $f(x) = \ln x$, then $f'(x) = \frac{1}{x}$. Thus $f'(1) = 1$. We now use this fact to express the number $e$ as a limit.
+
+\vspace{0.5em}
+From the definition of a derivative as a limit, we have:
+\[
+f'(1) = \lim_{h \to 0} \frac{f(1 + h) - f(1)}{h}
+= \lim_{x \to 0} \frac{f(1 + x) - f(1)}{x}
+\]
+
+\[
+= \lim_{x \to 0} \frac{\ln(1 + x) - \ln 1}{x}
+= \lim_{x \to 0} \frac{1}{x} \ln(1 + x)= \lim_{x \to 0} \ln(1 + x)^{1/x}
+\]
+
+Because $f'(1) = 1$, we have
+\[
+\lim_{x \to 0} \ln(1 + x)^{1/x} = 1
+\]
+
+Then:
+
+\[
+e = e^1 = e^{\lim_{x \to 0} \ln(1 + x)^{1/x}}
+= \lim_{x \to 0} e^{\ln(1 + x)^{1/x}}
+= \lim_{x \to 0} (1 + x)^{1/x}
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Definition of $e$ as a Limit}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Definition of $e$}]
+\[
+e = \lim_{x \to 0} (1 + x)^{1/x}
+\]
+\end{tcolorbox}
+If we put $n = 1/x$, then $n \to \infty$ as $x \to 0^+$, and so an alternative expression for $e$ is:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Classic Limit of $e$}]
+\[
+e = \lim_{n \to \infty} \left(1 + \frac{1}{n} \right)^n
+\]
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Definition of $e$ as a Limit}
+    \begin{columns}[c]
+% create the column with the first image, that occupies
+% half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{between 2 and 3}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figures/section3.6/CalculusT1.png}
+            \caption{The graph of $y=(1+x)^{1/x}$}
+        \end{figure}      
+        \end{column}
+    % create the column with the second image, that also
+    % occupies half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{slope1}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/section3.6/CalculusT2.png}
+            \caption{Numerical results of $y=(1+x)^{1/x}$}
+        \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivative of the Inverse Sine Function}
+
+Recall the definition of the arcsine function:
+\[
+y = \sin^{-1} x \quad \text{means} \quad \sin y = x \quad \text{and} \quad -\frac{\pi}{2} \le y \le \frac{\pi}{2}
+\]
+
+Differentiating $\sin y = x$ implicitly with respect to $x$, we obtain:
+\[
+\cos y \, \frac{dy}{dx} = 1 \quad \text{or} \quad \frac{dy}{dx} = \frac{1}{\cos y}
+\]
+
+Now $\cos y \ge 0$ because $-\frac{\pi}{2} \le y \le \frac{\pi}{2}$, so
+\[
+\cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2} \quad \text{\small (since } \cos^2 y + \sin^2 y = 1\text{)}
+\]
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Derivative of $\sin^{-1}x$}]
+\[
+\frac{dy}{dx}=\frac{d}{dx} \left( \sin^{-1} x \right) = \frac{1}{\sqrt{1 - x^2}}
+\]
+\end{tcolorbox}
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Derivatives of Inverse Trigonometric Functions}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivatives of Inverse Trigonometric Functions}]
+\[
+\begin{aligned}
+\frac{d}{dx} (\sin^{-1} x) &= \frac{1}{\sqrt{1 - x^2}} 
+&\qquad
+\frac{d}{dx} (\csc^{-1} x) &= -\frac{1}{x \sqrt{x^2 - 1}} \\[1em]
+\frac{d}{dx} (\cos^{-1} x) &= -\frac{1}{\sqrt{1 - x^2}} 
+&\qquad
+\frac{d}{dx} (\sec^{-1} x) &= \frac{1}{x \sqrt{x^2 - 1}} \\[1em]
+\frac{d}{dx} (\tan^{-1} x) &= \frac{1}{1 + x^2} 
+&\qquad
+\frac{d}{dx} (\cot^{-1} x) &= -\frac{1}{1 + x^2}
+\end{aligned}
+\]
+\end{tcolorbox}
+
+Try to prove all of the equations from the given properties of derivatives of inverse trigonometric functions.
+
+\end{frame}
+%=====================================================================
+%=====================================================================
+
+\end{document}

@@ -1,0 +1,286 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage{lmodern}
+\usepackage{mathabx}
+
+\usetheme{Madrid} % 可選其他主題：e.g., Warsaw, Berkeley, etc.
+\usecolortheme{default}
+\setbeamertemplate{caption}[numbered]% Number float-like environments
+% customize the caption
+\setbeamerfont{caption}{size=\footnotesize}
+% \setbeamercolor{caption}{fg=blue}
+% \setbeamercolor{caption name}{fg=red}
+
+\title{Differentiation Rules}
+\subtitle{section3.1: Derivatives of Polynomials and Exponential Functions}
+\author{Hsu Chun-Wei}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+%=====================================================================
+\begin{frame}{Derivative of a Constant Function}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,  title=Derivative of a Constant Function]
+\[
+\frac{d}{dx}(c) = 0
+\]
+\end{tcolorbox}
+
+\vspace{1em}
+
+\textbf{proof:}
+
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+= \lim_{h \to 0} \frac{c - c}{h}
+= \lim_{h \to 0} 0
+= 0
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{The Power Rule}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{The Power Rule}]
+  
+If $n$ is a positive integer, then
+\[
+\frac{d}{dx}(x^n) = nx^{n-1}
+\]
+\end{tcolorbox}
+
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Proof of the Power Rule}
+
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} 
+= \lim_{h \to 0} \frac{(x+h)^n - x^n}{h}
+\]
+
+\vspace{0.5em}
+
+Here we need to expand \( (x+h)^n \) and we use the Binomial Theorem to do so:
+
+\[
+f'(x) = \lim_{h \to 0} \frac{ 
+\left[
+x^n + nx^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \cdots + nxh^{n-1} + h^n
+\right] - x^n }{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{
+nx^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \cdots + nxh^{n-1} + h^n }{h}
+\]
+
+\[
+= \lim_{h \to 0} \left[
+nx^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \cdots + nxh^{n-2} + h^{n-1}
+\right]
+\]
+
+\[
+= nx^{n-1}
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{The Constant Multiple Rule}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{The Constant Multiple Rule} ]
+If $c$ is a constant and $f$ is a differentiable function, then
+\[
+\frac{d}{dx}[cf(x)] = c \frac{d}{dx} f(x)
+\]
+\end{tcolorbox}
+
+\vspace{1em}
+\textbf{\color{red}PROOF} \quad Let \( g(x) = cf(x) \). Then
+
+\[
+g'(x) = \lim_{h \to 0} \frac{g(x+h) - g(x)}{h}
+= \lim_{h \to 0} \frac{cf(x+h) - cf(x)}{h}
+\]
+
+\[
+= \lim_{h \to 0} c \left[ \frac{f(x+h) - f(x)}{h} \right]
+= c \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = c f'(x)
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{The Sum and Difference Rules}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{The Sum and Difference Rules} ]
+If $f$ and $g$ are both differentiable, then
+\[
+\frac{d}{dx}[f(x) + g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x)
+\]
+\[
+\frac{d}{dx}[f(x) - g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x)
+\]
+\end{tcolorbox}
+
+\vspace{1em}
+\textbf{\color{red}PROOF} \quad To prove the Sum Rule, we let \( F(x) = f(x) + g(x) \). Then
+
+\[
+F'(x) = \lim_{h \to 0} \frac{F(x+h) - F(x)}{h}
+= \lim_{h \to 0} \frac{[f(x+h) + g(x+h)] - [f(x) + g(x)]}{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
++ \lim_{h \to 0} \frac{g(x+h) - g(x)}{h}
+= f'(x) + g'(x)
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Exponential Functions}
+
+Let’s try to compute the derivative of the exponential function \( f(x) = b^x \) using the definition of a derivative:
+
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+= \lim_{h \to 0} \frac{b^{x+h} - b^x}{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{b^x b^h - b^x}{h}
+= \lim_{h \to 0} \frac{b^x (b^h - 1)}{h}
+\]
+
+The factor \( b^x \) doesn’t depend on \( h \), so we can take it in front of the limit:
+
+\[
+f'(x) = b^x \lim_{h \to 0} \frac{b^h - 1}{h}
+\]
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Exponential Functions}
+
+Notice that the limit is the value of the derivative of \( f \) at 0, that is,
+
+\[
+\lim_{h \to 0} \frac{b^h - 1}{h} = f'(0)
+\]
+
+Therefore we have shown that if the exponential function \( f(x) = b^x \) is differentiable at 0, then it is differentiable everywhere and
+
+\[
+f'(x) = f'(0) b^x
+\]
+
+This equation says that \textbf{the rate of change of any exponential function is proportional to the function itself}.
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Definition of the Number $e$}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Definition of the Number $e$} ]
+$e$ is the number such that
+\[
+\lim_{h \to 0} \frac{e^h - 1}{h} = 1
+\]
+\end{tcolorbox}
+
+\vspace{1em}
+
+Geometrically, this means that of all possible exponential functions \( y = b^x \),  
+the function \( f(x) = e^x \) is the one whose tangent line at \( (0,1) \) has a slope \( f'(0) \) that is exactly 1.  
+
+\vspace{1em}
+\textit{(See Figures \ref{between 2 and 3}. and \ref{slope1}.)}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Definition of the Number $e$}
+    \begin{columns}[c]
+% create the column with the first image, that occupies
+% half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{between 2 and 3}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figures/section3.1/CalculusT1.png}
+            \caption{The graph of $b^x$ where $2 < b < 3$}
+        \end{figure}      
+        \end{column}
+    % create the column with the second image, that also
+    % occupies half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{slope1}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/section3.1/CalculusT2.png}
+            \caption{$e^x$ with slope 1 at $(0,1)$}
+        \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+%=====================================================================
+\begin{frame}{Definition of the Number $e$}
+If we put \( b = e \) and therefore \( f'(0) = 1 \) in Equation 4, it becomes the following important differentiation formula:
+
+\[
+f'(x) = f'(0) \cdot b^x = 1 \cdot e^x = e^x
+\]
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivative of the Natural Exponential Function} ]
+\[
+\frac{d}{dx}(e^x) = e^x
+\]
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivatives of General Exponential Functions}
+
+We can use the Chain Rule to differentiate an exponential function with any base \( b > 0 \).  
+Recall from Equation 1.5.10 that we can write
+
+\[
+b^x = e^{(\ln b)x}
+\]
+
+and then the Chain Rule gives
+
+\[
+\frac{d}{dx} (b^x)
+= \frac{d}{dx} \left( e^{(\ln b)x} \right)
+= e^{(\ln b)x} \cdot \frac{d}{dx}[(\ln b)x]
+\]
+
+\[
+= e^{(\ln b)x} \cdot (\ln b)
+= b^x \ln b
+\]
+
+because \( \ln b \) is a constant. So we have the formula:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivative of General Exponential Function} ]
+\[
+\frac{d}{dx} (b^x) = b^x \ln b
+\]
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+
+\end{document}

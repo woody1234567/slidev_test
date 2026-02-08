@@ -1,0 +1,266 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage{lmodern}
+\usepackage{mathabx}
+
+\usetheme{Madrid} % 可選其他主題：e.g., Warsaw, Berkeley, etc.
+\usecolortheme{default}
+\setbeamertemplate{caption}[numbered]% Number float-like environments
+% customize the caption
+\setbeamerfont{caption}{size=\footnotesize}
+% \setbeamercolor{caption}{fg=blue}
+% \setbeamercolor{caption name}{fg=red}
+
+\title{Differentiation Rules}
+\subtitle{section3.3: Derivatives of Trigonometric Functions}
+\author{Hsu Chun-Wei}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+%=====================================================================
+\begin{frame}{Derivative of $sin x$}
+
+Let’s try to confirm our guess that if \( f(x) = \sin x \), then \( f'(x) = \cos x \).  
+From the definition of a derivative, we have
+
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+= \lim_{h \to 0} \frac{\sin(x+h) - \sin x}{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h - \sin x}{h}
+\]
+
+\[
+= \lim_{h \to 0} \left[
+\frac{\sin x \cos h - \sin x}{h}
++ \frac{\cos x \sin h}{h}
+\right]
+\]
+
+\[
+= \lim_{h \to 0} \left[
+\sin x \left( \frac{\cos h - 1}{h} \right)
++ \cos x \left( \frac{\sin h}{h} \right)
+\right]
+\]
+
+\[
+= \lim_{h \to 0}\sin x \cdot \lim_{h \to 0} \frac{\cos h - 1}{h}
++ \lim_{h \to 0}\cos x \cdot \lim_{h \to 0} \frac{\sin h}{h}
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Derivative of $sin x$}
+
+Two of these four limits are easy to evaluate.  
+Because we regard \( x \) as a constant when computing a limit as \( h \to 0 \), we have
+
+\[
+\lim_{h \to 0} \sin x = \sin x
+\qquad \text{and} \qquad
+\lim_{h \to 0} \cos x = \cos x
+\]
+
+Later in this section we will prove that
+
+\[
+\lim_{h \to 0} \frac{\sin h}{h} = 1
+\qquad \text{and} \qquad
+\lim_{h \to 0} \frac{\cos h - 1}{h} = 0
+\]
+
+So we have proved the formula for the derivative of the sine function:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivative of the Sine Function} ]
+\[
+\frac{d}{dx} (\sin x) = \cos x
+\]
+\end{tcolorbox}
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivative of $\sin x$}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/section3.3/CalculusT1.png}
+    \caption{The relationship between the derivative of sin x and cos x}
+    \label{$sin' (x) = cos(x)$}
+\end{figure}
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivative of $\cos x$}
+
+\textbf{Problem 26.} Prove, using the definition of a derivative, that if  
+\( f(x) = \cos x \), then \( f'(x) = -\sin x \).
+
+\vspace{1em}
+
+By the definition of the derivative:
+
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+= \lim_{h \to 0} \frac{\cos(x+h) - \cos x}{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h}
+\]
+
+\[
+= \lim_{h \to 0} \left[
+\frac{\cos x (\cos h - 1)}{h}
+- \frac{\sin x \sin h}{h}
+\right]
+\]
+
+\[
+= \cos x \cdot \lim_{h \to 0} \frac{\cos h - 1}{h}
+- \sin x \cdot \lim_{h \to 0} \frac{\sin h}{h}
+\]
+
+\[
+= \cos x \cdot 0 - \sin x \cdot 1 = -\sin x
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Limit Proof: $\displaystyle \lim_{\theta \to 0} \frac{\sin \theta }{\theta} = 1$}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Limit identity} ]
+\[
+\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1
+\]
+\end{tcolorbox}
+
+\vspace{1em}
+
+\begin{columns}[c]
+% create the column with the first image, that occupies
+% half of the slide
+    \begin{column}{.5\textwidth}
+    \textbf{\color{red}PROOF} \quad Assume first that \( \theta \) lies between \( 0 \) and \( \pi/2 \).  
+    Figure \ref{proof1} shows a sector of a circle with center \( O \), central angle \( \theta \), and radius 1.  
+    \( BC \) is drawn perpendicular to \( OA \). By the definition of radian measure, we have arc \( AB = \theta \).  
+    Also \( |BC| = |OB| \sin \theta = \sin \theta \). 
+    \end{column}
+% create the column with the second image, that also
+% occupies half of the slide
+    \begin{column}{.5\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/section3.3/CalculusT2.png}
+        \caption{proof for $\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$}
+        \label{proof1}
+    \end{figure}
+    \end{column}
+\end{columns}
+
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Limit Proof: $\displaystyle \lim_{\theta \to 0} \frac{\sin \theta }{\theta} = 1$}
+From the diagram we see that
+    \[
+    |BC| < |AB| < \text{arc } AB
+    \]   
+Therefore, \( \sin \theta < \theta \), so
+
+\[
+\frac{\sin \theta}{\theta} < 1
+\]
+
+Let the tangent lines at \( A \) and \( B \) intersect at \( E \).
+
+\[
+\theta = \text{arc } AB < |AE| + |EB|
+< |AE| + |ED|
+= |AD| = |OA| \tan \theta = \tan \theta
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Limit Proof: $\displaystyle \lim_{\theta \to 0} \frac{\sin \theta }{\theta} = 1$}
+
+Therefore, we have
+
+\[
+\theta < \frac{\sin \theta}{\cos \theta}
+\quad \text{so} \quad
+\cos \theta < \frac{\sin \theta}{\theta} < 1
+\]
+
+We know that \( \lim_{\theta \to 0} 1 = 1 \) and \( \lim_{\theta \to 0} \cos \theta = 1 \), so by the Squeeze Theorem, we have
+
+\[
+\lim_{\theta \to 0^+} \frac{\sin \theta}{\theta} = 1
+\quad \text{(for \( 0 < \theta < \frac{\pi}{2} \))}
+\]
+
+But the function \( \frac{\sin \theta}{\theta} \) is an even function, so its right and left limits must be equal.  
+Hence, we have
+
+\[
+\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Limit Proof: $\displaystyle \lim_{\theta \to 0} \frac{\cos \theta - 1}{\theta} = 0$}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Limit Identity}]
+\[
+\lim_{\theta \to 0} \frac{\cos \theta - 1}{\theta} = 0
+\]
+\end{tcolorbox}
+
+\textcolor{red}{\textbf{PROOF:}} We multiply numerator and denominator by $\cos \theta + 1$ in order to put the function in a form in which we can use limits that we know.
+\[
+\begin{aligned}
+\lim_{\theta \to 0} \frac{\cos \theta - 1}{\theta}
+&= \lim_{\theta \to 0} \left( \frac{\cos \theta - 1}{\theta} \cdot \frac{\cos \theta + 1}{\cos \theta + 1} \right)= \lim_{\theta \to 0} \frac{\cos^2 \theta - 1}{\theta(\cos \theta + 1)} \\
+&= \lim_{\theta \to 0} \frac{-\sin^2 \theta}{\theta(\cos \theta + 1)} = -\lim_{\theta \to 0} \left( \frac{\sin \theta}{\theta} \cdot \frac{\sin \theta}{\cos \theta + 1} \right) \\
+&= -\lim_{\theta \to 0} \frac{\sin \theta}{\theta} \cdot \lim_{\theta \to 0} \frac{\sin \theta}{\cos \theta + 1} \\
+&= -1 \cdot \left( \frac{0}{1 + 1} \right) = 0
+\end{aligned}
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivatives of Trigonometric Functions}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivatives of Trigonometric Functions} ]
+\[
+\begin{aligned}
+\frac{d}{dx} (\sin x) &= \cos x
+&\qquad \frac{d}{dx} (\csc x) &= -\csc x \cot x \\
+\frac{d}{dx} (\cos x) &= -\sin x
+&\qquad \frac{d}{dx} (\sec x) &= \sec x \tan x \\
+\frac{d}{dx} (\tan x) &= \sec^2 x
+&\qquad \frac{d}{dx} (\cot x) &= -\csc^2 x
+\end{aligned}
+\]
+\end{tcolorbox}
+
+Try to prove of all of the equations from the given properties of derivatives of trigonometric function.
+
+\end{frame}
+%=====================================================================
+%=====================================================================
+%=====================================================================
+%=====================================================================
+
+\end{document}

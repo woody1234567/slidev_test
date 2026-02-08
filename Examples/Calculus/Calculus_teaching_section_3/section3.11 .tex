@@ -1,0 +1,326 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage{lmodern}
+\usepackage{mathabx}
+
+\usetheme{Madrid} % 可選其他主題：e.g., Warsaw, Berkeley, etc.
+\usecolortheme{default}
+\setbeamertemplate{caption}[numbered]% Number float-like environments
+% customize the caption
+\setbeamerfont{caption}{size=\footnotesize}
+% \setbeamercolor{caption}{fg=blue}
+% \setbeamercolor{caption name}{fg=red}
+
+\title{Differentiation Rules}
+\subtitle{section3.11: Hyperbolic Functions}
+\author{Hsu Chun-Wei}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+%=====================================================================
+\begin{frame}{Hyperbolic Functions and Their Definitions}
+
+Certain combinations of the exponential functions $e^x$ and $e^{-x}$ arise so frequently in mathematics and its applications that they are given special names. These are called \textbf{hyperbolic functions} and are analogous to trigonometric functions, but relate to hyperbolas instead of circles.
+
+\vspace{1em}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Definition of the Hyperbolic Functions}]
+
+\[
+\begin{aligned}
+\sinh x &= \frac{e^x - e^{-x}}{2}
+&\qquad \csch x &= \frac{1}{\sinh x} \\[0.8em]
+\cosh x &= \frac{e^x + e^{-x}}{2}
+&\qquad \sech x &= \frac{1}{\cosh x} \\[0.8em]
+\tanh x &= \frac{\sinh x}{\cosh x}
+&\qquad \coth x &= \frac{\cosh x}{\sinh x}
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{The graphs of hyperbolic functions}
+    \begin{columns}[c]
+% create the column with the first image, that occupies
+% half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{The graphs of hyperbolic sine}
+            \centering
+            \includegraphics[width=0.8\textwidth]{figures/section3.11/CalculusT1.png}
+            \caption{The graphs of hyperbolic sine}
+        \end{figure}      
+        \end{column}
+    % create the column with the second image, that also
+    % occupies half of the slide
+        \begin{column}{.5\textwidth}
+        \begin{figure}
+            \label{The graphs of hyperbolic cosine}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/section3.11/CalculusT2.png}
+            \caption{The graphs of hyperbolic cosine}
+        \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+%=====================================================================
+%=====================================================================
+\begin{frame}{Example of hyperbolic function in real world}
+
+The most famous application is the use of hyperbolic
+cosine to describe the shape of a hanging wire. It can be proved that if a heavy flexible cable (such as an overhead power line) is suspended between two points at the same height, then it takes the shape of a curve with equation
+\[
+y = c + a \cosh(\frac{x}{a})
+\]
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/section3.11/CalculusT3.png}
+    \caption{catenary}
+    \label{catenary}
+\end{figure}
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Hyperbolic Identities}
+
+The hyperbolic functions satisfy a number of identities that are similar to well-known trigonometric identities.
+
+\vspace{1em}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Hyperbolic Identities}]
+
+\[
+\begin{aligned}
+&\sinh(-x) = -\sinh x 
+& \cosh(-x) = \cosh x \\[0.8em]
+&\cosh^2 x - \sinh^2 x = 1 
+& 1 - \tanh^2 x = \text{sech}^2 x \\[0.8em]
+&\sinh(x + y) = \sinh x \cosh y + \cosh x \sinh y \\
+&\cosh(x + y) = \cosh x \cosh y + \sinh x \sinh y
+\end{aligned}
+\]
+\end{tcolorbox}
+
+Try to prove of all of the equations from the given Identities of Hyperbolic functions.
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Example: Proving Hyperbolic Identities}
+
+\textcolor{blue}{\textbf{EXAMPLE}} \quad 
+Prove (a) $\cosh^2 x - \sinh^2 x = 1$ and (b) $1 - \tanh^2 x = \sech^2 x$.
+
+\vspace{0.5em}
+\textcolor{blue}{\textbf{SOLUTION}}
+
+(a) We compute:
+\[
+\cosh^2 x - \sinh^2 x 
+= \left( \frac{e^x + e^{-x}}{2} \right)^2 - \left( \frac{e^x - e^{-x}}{2} \right)^2
+\]
+\[
+= \frac{e^{2x} + 2 + e^{-2x}}{4} - \frac{e^{2x} - 2 + e^{-2x}}{4}
+= \frac{4}{4} = 1
+\]
+
+(b) Start with the identity from (a): $\cosh^2 x - \sinh^2 x = 1$
+
+Divide both sides by $\cosh^2 x$:
+\[
+\frac{\cosh^2 x - \sinh^2 x}{\cosh^2 x} = \frac{1}{\cosh^2 x}
+\]
+\[
+1 - \frac{\sinh^2 x}{\cosh^2 x} = \text{sech}^2 x
+\quad \Rightarrow \quad 1 - \tanh^2 x = \text{sech}^2 x
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Derivatives of Hyperbolic Functions}
+
+We list the differentiation formulas for the hyperbolic functions.  
+Note the analogy with the differentiation formulas for trigonometric functions, but note that the signs differ in some cases.
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Derivatives of Hyperbolic Functions}]
+
+\[
+\begin{aligned}
+\frac{d}{dx} (\sinh x) &= \cosh x 
+&\qquad \frac{d}{dx} (\text{csch} x) &= -\text{csch} x \, \coth x \\[0.8em]
+\frac{d}{dx} (\cosh x) &= \sinh x 
+&\qquad \frac{d}{dx} (\text{sech} x) &= -\text{sech} x \, \tanh x \\[0.8em]
+\frac{d}{dx} (\tanh x) &= \text{sech}^2 x 
+&\qquad \frac{d}{dx} (\coth x) &= -\text{csch}^2 x
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+Try to prove of all of the equations from the given properties of hyperbolic function.
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Inverse Hyperbolic Functions and Their Definitions}
+
+$\sinh$ and $\tanh$ are one-to-one functions and so they have inverse functions denoted by $\sinh^{-1}$. Although $\cosh$ is not one-to-one, if we restrict the domain to $[0, \infty)$, then $y = \cosh x$ becomes one-to-one and attains all values in the range $[1, \infty)$. The inverse hyperbolic cosine function is defined as the inverse of this restricted function.
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Inverse Hyperbolic Functions}]
+
+\[
+\begin{aligned}
+y = \sinh^{-1} x &\iff \sinh y = x \\
+y = \cosh^{-1} x &\iff \cosh y = x \quad \text{and} \quad y \ge 0 \\
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Inverse Hyperbolic Functions as Logarithms}
+
+Since the hyperbolic functions are defined in terms of exponential functions, it’s not surprising to learn that the inverse hyperbolic functions can be expressed in terms of logarithms. In particular, we have:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white,
+  title=\textbf{Inverse Hyperbolic Formulas (Logarithmic Form)}]
+
+\begin{align*}
+\sinh^{-1}x &= \ln\left(x + \sqrt{x^2 + 1}\right)
+&&\quad x \in \mathbb{R} \\[0.8em]
+\cosh^{-1}x &= \ln\left(x + \sqrt{x^2 - 1}\right)
+&&\quad x \ge 1 \\[0.8em]
+\tanh^{-1}x &= \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right)
+&&\quad -1 < x < 1
+\end{align*}
+
+\end{tcolorbox}
+
+Try to prove of all of the equations from the given properties of hyperbolic function.
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Example: Inverse Hyperbolic Identity}
+
+\textcolor{blue}{\textbf{EXAMPLE}} \quad Show that
+\[
+\sinh^{-1}x = \ln\left(x + \sqrt{x^2 + 1} \right)
+\]
+
+\textcolor{blue}{\textbf{SOLUTION}} \quad Let $y = \sinh^{-1}x$. Then
+\[
+x = \sinh y = \frac{e^y - e^{-y}}{2}
+\]
+
+Multiply both sides by 2:
+\[
+e^y - e^{-y} = 2x
+\]
+
+Multiply both sides by $e^y$:
+\[
+(e^y)^2 - 2x e^y - 1 = 0
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Example: Inverse Hyperbolic Identity}
+
+This is a quadratic in $e^y$. Solving:
+\[
+e^y = \frac{2x \pm \sqrt{4x^2 + 4}}{2}
+= x \pm \sqrt{x^2 + 1}
+\]
+
+Since $e^y > 0$, we discard the minus root:
+\[
+e^y = x + \sqrt{x^2 + 1}
+\]
+
+Therefore:
+\[
+y = \ln(e^y) = \ln\left(x + \sqrt{x^2 + 1}\right)
+\]
+
+\[
+\Rightarrow \quad \sinh^{-1}x = \ln\left(x + \sqrt{x^2 + 1}\right)
+\]
+\end{frame}
+%=====================================================================
+\begin{frame}{Derivatives of Inverse Hyperbolic Functions}
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Derivatives of Inverse Hyperbolic Functions}]
+\[
+\begin{aligned}
+\frac{d}{dx} (\sinh^{-1} x) &= \frac{1}{\sqrt{1 + x^2}} \\
+\frac{d}{dx} (\cosh^{-1} x) &= \frac{1}{\sqrt{x^2 - 1}} \\
+\frac{d}{dx} (\tanh^{-1} x) &= \frac{1}{1 - x^2}
+\end{aligned}
+\hspace{2cm}
+\begin{aligned}
+\frac{d}{dx} (\csch^{-1} x) &= -\frac{1}{|x| \sqrt{1 + x^2}} \\
+\frac{d}{dx} (\sech^{-1} x) &= -\frac{1}{x \sqrt{1 - x^2}} \\
+\frac{d}{dx} (\coth^{-1} x) &= \frac{1}{1 - x^2}
+\end{aligned}
+\]
+\end{tcolorbox}
+
+Try to prove of all of the equations from the given properties of hyperbolic function.
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Example: derivative for inverse hyperbolic function}
+\textbf{Example:} Prove that
+\[
+\frac{d}{dx} \left( \sinh^{-1} x \right) = \frac{1}{\sqrt{1 + x^2}}
+\]
+
+\textbf{Solution 1 :} \ Let \( y = \sinh^{-1} x \). Then \( \sinh y = x \).
+
+Differentiating implicitly with respect to \(x\), we get:
+\[
+\cosh y \cdot \frac{dy}{dx} = 1 \quad \Rightarrow \quad \frac{dy}{dx} = \frac{1}{\cosh y}
+\]
+
+Using the identity \( \cosh^2 y - \sinh^2 y = 1 \), we substitute:
+\[
+\cosh^2 y = 1 + \sinh^2 y = 1 + x^2 \quad \Rightarrow \quad \cosh y = \sqrt{1 + x^2}
+\]
+
+Thus,
+\[
+\frac{dy}{dx} = \frac{1}{\sqrt{1 + x^2}}
+\]
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Example: derivative for inverse hyperbolic function}
+\textbf{Solution 2 :} 
+    \begin{align*}
+    \frac{d}{dx} (\sinh^{-1} x) 
+    &= \frac{d}{dx} \ln\left(x + \sqrt{x^2 + 1} \right) \\
+    &= \frac{1}{x + \sqrt{x^2 + 1}} \cdot \frac{d}{dx} \left(x + \sqrt{x^2 + 1} \right) \\
+    &= \frac{1}{x + \sqrt{x^2 + 1}} \left( 1 + \frac{x}{\sqrt{x^2 + 1}} \right) \\
+    &= \frac{\sqrt{x^2 + 1} + x}{(x + \sqrt{x^2 + 1})\sqrt{x^2 + 1}} \\
+    &= \frac{1}{\sqrt{x^2 + 1}}
+    \end{align*}
+
+\end{frame}
+%=====================================================================
+\end{document}

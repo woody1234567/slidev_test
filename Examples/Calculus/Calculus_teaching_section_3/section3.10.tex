@@ -1,0 +1,173 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage{lmodern}
+\usepackage{mathabx}
+
+\usetheme{Madrid} % 可選其他主題：e.g., Warsaw, Berkeley, etc.
+\usecolortheme{default}
+\setbeamertemplate{caption}[numbered]% Number float-like environments
+% customize the caption
+\setbeamerfont{caption}{size=\footnotesize}
+% \setbeamercolor{caption}{fg=blue}
+% \setbeamercolor{caption name}{fg=red}
+
+\title{Differentiation Rules}
+\subtitle{section3.10: Linear Approximations and Differentials}
+\author{Hsu Chun-Wei}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+%=====================================================================
+\begin{frame}{Linearization and Approximation}
+It might be easy to calculate a value $f(a)$ of a function, but difficult (or even impossible) to compute nearby values of $f$. So we settle for the easily computed values of the linear function $L$ whose graph is the tangent line of $f$ at $(a, f(a))$.
+
+\vspace{0.5em}
+In other words, we use the tangent line at $(a, f(a))$ as an approximation to the curve $y = f(x)$ when $x$ is near $a$. An equation of this tangent line is:
+\[
+y = f(a) + f'(a)(x - a)
+\]
+
+The linear function whose graph is this tangent line is:
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Linearization of $f$ at $a$}]
+\[
+L(x) = f(a) + f'(a)(x - a)
+\]
+\end{tcolorbox}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Linearization and Approximation}
+\vspace{0.5em}
+The approximation $f(x) \approx L(x)$, called the linear (or tangent line) approximation, is:
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Linear Approximation}]
+\[
+f(x) \approx f(a) + f'(a)(x - a)
+\]
+\end{tcolorbox}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\linewidth]{figures/section3.10/CalculusT1.png}
+    \caption{Linearization and Approximation}
+    \label{Linearization and Approximation}
+\end{figure}
+
+\end{frame}
+%=====================================================================
+\begin{frame}{Differentials}
+
+The ideas behind linear approximations are sometimes formulated in the terminology and notation of \textbf{differentials}. If $y = f(x)$, where $f$ is a differentiable function, then the \textbf{differential} $dx$ is an independent variable; that is, $dx$ can be given the value of any real number. 
+
+The \textbf{differential} $dy$ is then defined in terms of $dx$ by the equation:
+
+\begin{tcolorbox}[colframe=red!80!black, colback=white, title=\textbf{Definition of Differential}]
+\[
+dy = f'(x)\, dx
+\]
+\end{tcolorbox}
+
+\vspace{0.5em}
+So $dy$ is a dependent variable; it depends on the values of $x$ and $dx$. If $dx$ is given a specific value and $x$ is taken to be some specific number in the domain of $f$, then the numerical value of $dy$ is determined.
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Geometric Meaning of Differentials}
+
+The geometric meaning of differentials is illustrated using two points: 
+$P(x, f(x))$ and $Q(x + \Delta x, f(x + \Delta x))$ on the curve $y = f(x)$, 
+and let $dx = \Delta x$. The corresponding change in $y$ is:
+\[
+\Delta y = f(x + \Delta x) - f(x)
+\]
+
+The slope of the tangent line $PR$ is the derivative $f'(x)$. 
+Thus, the directed vertical distance from $S$ to $R$ is:
+\[
+f'(x) \cdot dx = dy
+\]
+
+$dy$ represents the change in the \textbf{tangent line (linearization)}.  
+$\Delta y$ represents the actual change in $f(x)$ along the curve.
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Geometric Meaning of Differentials}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/section3.10/CalculusT2.png} % ← Replace with actual path
+        \caption{Geometric Meaning of Differentials}
+        \label{Geometric Meaning of Differentials}
+    \end{figure}
+\end{frame}
+%=====================================================================
+\begin{frame}{Example: Comparing $\Delta y$ and $dy$}
+
+\textcolor{blue}{\textbf{EXAMPLE}} \quad
+Compare the values of $\Delta y$ and $dy$ if $f(x) = x^3 + x^2 - 2x + 1$ and $x$ changes from 2 to 2.05 and from 2 to 2.01.
+
+\vspace{0.5em}
+\textcolor{blue}{\textbf{SOLUTION}}
+
+(a) When $x$ changes from 2 to 2.05:
+
+\[
+f(2) = 2^3 + 2^2 - 2(2) + 1 = 9
+\]
+\[
+f(2.05) = (2.05)^3 + (2.05)^2 - 2(2.05) + 1 = 9.717625
+\]
+\[
+\Delta y = f(2.05) - f(2) = 0.717625
+\]
+
+General form:
+\[
+dy = f'(x)\, dx = (3x^2 + 2x - 2) dx
+\]
+At $x = 2$, $dx = 0.05$:
+\[
+dy = [3(2)^2 + 2(2) - 2] \cdot 0.05 = 0.7
+\]
+
+\end{frame}
+
+%=====================================================================
+\begin{frame}{Example: Comparing $\Delta y$ and $dy$}
+(b) When $x$ changes from 2 to 2.01:
+
+\[
+f(2.01) = (2.01)^3 + (2.01)^2 - 2(2.01) + 1 = 9.140701
+\]
+\[
+\Delta y = f(2.01) - f(2) = 0.140701
+\]
+
+At $dx = 0.01$:
+\[
+dy = [3(2)^2 + 2(2) - 2] \cdot 0.01 = 0.14
+\]
+
+\vspace{0.5em}
+\textcolor{blue}{\textbf{Observation:}} As $\Delta x$ becomes smaller, the approximation $\Delta y \approx dy$ improves. Also, $dy$ is easier to compute than $\Delta y$.
+\end{frame}
+%=====================================================================
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{figures/section3.10/CalculusT3.png}
+        \caption{Comparing $\Delta y$ and $dy$}
+        \label{Comparing $\Delta y$ and $dy$}
+    \end{figure}
+\end{frame}
+%=====================================================================
+%=====================================================================
+%=====================================================================
+%=====================================================================
+
+\end{document}
