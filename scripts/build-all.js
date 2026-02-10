@@ -104,9 +104,10 @@ function build() {
       });
       
       // Add rewrite for this slide deck to handle SPA routing
-      // Exclude assets directory from rewrite so they are served correctly
+      // Rewrite only if the path does NOT contain a dot (i.e., not a file like .css, .png, .js)
+      // This is more robust than excluding just 'assets/'
       vercelRewrites.push({
-        source: `${urlBase}((?!assets/).*)`,
+        source: `${urlBase}((?!.*\\.).*)`,
         destination: `${urlBase}index.html`
       });
       
