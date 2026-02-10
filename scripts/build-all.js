@@ -104,8 +104,9 @@ function build() {
       });
       
       // Add rewrite for this slide deck to handle SPA routing
+      // Exclude assets directory from rewrite so they are served correctly
       vercelRewrites.push({
-        source: `${urlBase}(.*)`,
+        source: `${urlBase}((?!assets/).*)`,
         destination: `${urlBase}index.html`
       });
       

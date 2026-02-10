@@ -1,83 +1,83 @@
 {
   "rewrites": [
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.1/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.1/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.1/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.10/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.10/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.10/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.11/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.11/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.11/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.3/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.3/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.3/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.4/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.4/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.4/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_3/section3.6/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_3/section3.6/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_3/section3.6/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.1/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.1/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.1/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.2/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.2/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.2/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.3/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.3/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.3/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.4/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.4/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.4/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.5/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.5/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.5/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.7/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.7/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.7/index.html"
     },
     {
-      "source": "/Calculus/Calculus_teaching_section_4/section4.9/(.*)",
+      "source": "/Calculus/Calculus_teaching_section_4/section4.9/((?!assets/).*)",
       "destination": "/Calculus/Calculus_teaching_section_4/section4.9/index.html"
     },
     {
-      "source": "/Economics/Economics_teaching/chap18/(.*)",
+      "source": "/Economics/Economics_teaching/chap18/((?!assets/).*)",
       "destination": "/Economics/Economics_teaching/chap18/index.html"
     },
     {
-      "source": "/Economics/Economics_teaching/chap3/(.*)",
+      "source": "/Economics/Economics_teaching/chap3/((?!assets/).*)",
       "destination": "/Economics/Economics_teaching/chap3/index.html"
     },
     {
-      "source": "/Economics/Economics_teaching/chap5/(.*)",
+      "source": "/Economics/Economics_teaching/chap5/((?!assets/).*)",
       "destination": "/Economics/Economics_teaching/chap5/index.html"
     },
     {
-      "source": "/Economics/Economics_teaching/chap6/(.*)",
+      "source": "/Economics/Economics_teaching/chap6/((?!assets/).*)",
       "destination": "/Economics/Economics_teaching/chap6/index.html"
     },
     {
-      "source": "/Economics/Economics_teaching/chap7/(.*)",
+      "source": "/Economics/Economics_teaching/chap7/((?!assets/).*)",
       "destination": "/Economics/Economics_teaching/chap7/index.html"
     },
     {
-      "source": "/IB_math/IB_math_test/IB_math/(.*)",
+      "source": "/IB_math/IB_math_test/IB_math/((?!assets/).*)",
       "destination": "/IB_math/IB_math_test/IB_math/index.html"
     },
     {
-      "source": "/resume/resume/(.*)",
+      "source": "/resume/resume/((?!assets/).*)",
       "destination": "/resume/resume/index.html"
     }
   ],
