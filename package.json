@@ -3,7 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "node scripts/build-all.js",
+    "build:single": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export"
   },
