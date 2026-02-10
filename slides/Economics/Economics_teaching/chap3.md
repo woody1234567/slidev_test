@@ -77,7 +77,7 @@ From this, if each devotes all 8 hours to one good:
 - **Rose:** 24 oz meat or 48 oz potatoes
 
 <div class="flex justify-center mt-4">
-  <img src="./chap3/T1.png" class="w-3/4" alt="Production Possibilities Table" />
+  <img src="./chap3/T1.png" class="w-1/2" alt="Production Possibilities Table" />
 </div>
 
 ---
@@ -94,7 +94,7 @@ layout: default
 This frontier illustrates the trade-off Frank faces: producing more potatoes requires giving up meat and vice versa.
 
 <div class="flex justify-center mt-4">
-  <img src="./chap3/HW2.png" class="w-1/2" alt="Frank's PPF" />
+  <img src="./chap3/HW2.png" class="w-1/3" alt="Frank's PPF" />
 </div>
 
 ---
@@ -111,7 +111,7 @@ layout: default
 Rose, being more productive than Frank in both goods, still faces trade-offs when choosing between producing meat and potatoes.
 
 <div class="flex justify-center mt-4">
-  <img src="./chap3/HW3.png" class="w-1/2" alt="Rose's PPF" />
+  <img src="./chap3/HW3.png" class="w-1/3" alt="Rose's PPF" />
 </div>
 
 ---
