@@ -39,13 +39,21 @@ function findSlides(dir, fileList = []) {
 }
 
 function generateVercelConfig(rewrites) {
-  const config = {
-    rewrites: rewrites,
-    cleanUrls: true
-  };
-  
-  const configPath = path.join(DIST_DIR, 'vercel.json');
-  console.log(`Generating vercel.json at ${configPath}`);
+  const configPath = path.resolve(__dirname, '../vercel.json');
+  console.log(`Updating vercel.json at ${configPath}`);
+
+  let config = {};
+  if (fs.existsSync(configPath)) {
+    try {
+      config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+    } catch (e) {
+      console.error('Failed to parse existing vercel.json');
+    }
+  }
+
+  config.rewrites = rewrites;
+  config.cleanUrls = true;
+
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 }
 
