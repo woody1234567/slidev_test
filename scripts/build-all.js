@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const SLIDES_DIR = path.resolve(__dirname, '../slides');
-const DIST_DIR = path.resolve(__dirname, '../dist');
+const PAGES_DIR = path.resolve(__dirname, '../slide_view/public');
 
 // Extensions to look for
 const EXTENSIONS = ['.md'];
@@ -73,14 +73,10 @@ function build() {
 
   console.log(`Found ${slideFiles.length} slide(s).`);
 
-  // Clean dist directory
-  if (fs.existsSync(DIST_DIR)) {
-    console.log(`Cleaning dist directory: ${DIST_DIR}`);
-    fs.rmSync(DIST_DIR, { recursive: true, force: true });
+  // Ensure pages directory exists
+  if (!fs.existsSync(PAGES_DIR)) {
+    fs.mkdirSync(PAGES_DIR, { recursive: true });
   }
-  
-  // Ensure dist exists
-  fs.mkdirSync(DIST_DIR, { recursive: true });
 
   const vercelRewrites = [];
 
@@ -92,9 +88,15 @@ function build() {
     const pathParts = path.parse(relativePath);
     
     // Generate output path mapping
-    // slides/A/B.md -> dist/A/B (directory)
+    // slides/A/B.md -> pages/A/B (directory)
     const relativeOutDir = path.join(pathParts.dir, pathParts.name);
-    const outDir = path.join(DIST_DIR, relativeOutDir);
+    const outDir = path.join(PAGES_DIR, relativeOutDir);
+
+    // Clean old slide output if it exists to prevent stale files
+    if (fs.existsSync(outDir)) {
+      console.log(`Cleaning old output for slide: ${outDir}`);
+      fs.rmSync(outDir, { recursive: true, force: true });
+    }
     
     // Base URL for Vercel deployment
     const urlBasePath = relativeOutDir.split(path.sep).join('/');
@@ -106,7 +108,7 @@ function build() {
 
     try {
       // Build command
-      execSync(`npx slidev build "${slidePath}" --out "${outDir}" --base "${urlBase}"`, {
+      execSync(`pnpm exec slidev build "${slidePath}" --out "${outDir}" --base "${urlBase}"`, {
         stdio: 'inherit',
         env: { ...process.env }
       });
