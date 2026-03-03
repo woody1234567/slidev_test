@@ -12,10 +12,26 @@ const isDark = computed({
 
 const slideLinks = [
   [
-    { label: 'Resume', href: '/resume/resume/', target: '_blank', external: true }
+    { label: 'Resume', href: '/resume/resume/', target: '_blank', external: true },
+    { label: 'thesis', href: '/resume/optimal_carbon_tax_slides/', target: '_blank', external: true },
+    { label: 'FunNow', href: '/resume/final_report_slides/', target: '_blank', external: true }
   ],
   [
-    { label: 'Calculus (Various)', href: '/Calculus/Calculus/', target: '_blank', external: true }
+    { label: 'Calculus 3.1', href: '/Calculus/Calculus_teaching_section_3/section3.1/', target: '_blank', external: true },
+    { label: 'Calculus 3.3', href: '/Calculus/Calculus_teaching_section_3/section3.3/', target: '_blank', external: true },
+    { label: 'Calculus 3.4', href: '/Calculus/Calculus_teaching_section_3/section3.4/', target: '_blank', external: true },
+    { label: 'Calculus 3.6', href: '/Calculus/Calculus_teaching_section_3/section3.6/', target: '_blank', external: true },
+    { label: 'Calculus 3.10', href: '/Calculus/Calculus_teaching_section_3/section3.10/', target: '_blank', external: true },
+    { label: 'Calculus 3.11', href: '/Calculus/Calculus_teaching_section_3/section3.11/', target: '_blank', external: true }
+  ],
+  [
+    { label: 'Calculus 4.1', href: '/Calculus/Calculus_teaching_section_4/section4.1/', target: '_blank', external: true },
+    { label: 'Calculus 4.2', href: '/Calculus/Calculus_teaching_section_4/section4.2/', target: '_blank', external: true },
+    { label: 'Calculus 4.3', href: '/Calculus/Calculus_teaching_section_4/section4.3/', target: '_blank', external: true },
+    { label: 'Calculus 4.4', href: '/Calculus/Calculus_teaching_section_4/section4.4/', target: '_blank', external: true },
+    { label: 'Calculus 4.5', href: '/Calculus/Calculus_teaching_section_4/section4.5/', target: '_blank', external: true },
+    { label: 'Calculus 4.7', href: '/Calculus/Calculus_teaching_section_4/section4.7/', target: '_blank', external: true },
+    { label: 'Calculus 4.9', href: '/Calculus/Calculus_teaching_section_4/section4.9/', target: '_blank', external: true }
   ],
   [
     { label: 'Economics: Chapter 3', href: '/Economics/Economics_teaching/chap3/', target: '_blank', external: true },
