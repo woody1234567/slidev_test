@@ -38,24 +38,6 @@ function findSlides(dir, fileList = []) {
   return fileList;
 }
 
-function generateVercelConfig(rewrites) {
-  const configPath = path.resolve(__dirname, '../vercel.json');
-  console.log(`Updating vercel.json at ${configPath}`);
-
-  let config = {};
-  if (fs.existsSync(configPath)) {
-    try {
-      config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-    } catch (e) {
-      console.error('Failed to parse existing vercel.json');
-    }
-  }
-
-  config.rewrites = rewrites;
-  config.cleanUrls = true;
-
-  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
-}
 
 function build() {
   console.log(`Scanning for slides in ${SLIDES_DIR}...`);
@@ -113,22 +95,11 @@ function build() {
         env: { ...process.env }
       });
       
-      // Add rewrite for this slide deck to handle SPA routing
-      // Rewrite only if the path does NOT contain a dot (i.e., not a file like .css, .png, .js)
-      // This is more robust than excluding just 'assets/'
-      vercelRewrites.push({
-        source: `${urlBase}((?!.*\\.).*)`,
-        destination: `${urlBase}index.html`
-      });
-      
     } catch (error) {
       console.error(`Failed to build ${relativePath}`);
       process.exit(1);
     }
   });
-  
-  // Generate Vercel config in dist
-  generateVercelConfig(vercelRewrites);
 
   console.log('All builds completed successfully!');
 }
