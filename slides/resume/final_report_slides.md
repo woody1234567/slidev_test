@@ -195,6 +195,17 @@ layout: two-cols
 ---
 layout: default
 ---
+# Decision Tree 模型
+
+我們使用由Random Forest 模型所篩選出來的重要變數再進行 (Decision Tree) 模型，以產出讓BD部門可以直覺遵循的決策樹模型
+
+<div class="flex justify-center mt-4">
+  <img src="./Funnow/Decision_tree_regression.png" class="w-2/5" alt="Decision Tree Graph" />
+</div>
+
+---
+layout: default
+---
 
 # 三大餐廳開發組合包與實際操作
 

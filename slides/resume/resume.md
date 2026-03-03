@@ -103,7 +103,7 @@ layout: default
     <span>#Nuxt</span>
     <span>#Python</span>
   </div>
-  <a href="https://techblog.studywithwoody.site/" class="mt-4 block text-primary text-sm hover:underline">View Demo -></a>
+  <a href="https://woodytechblog.studywithwoody.site/" class="mt-4 block text-primary text-sm hover:underline">View Demo -></a>
 </div>
 
 <div v-click class="border border-gray-400/20 rounded-lg p-4 hover:bg-gray-400/5 transition">
@@ -139,7 +139,7 @@ layout: default
   <div class="text-xl font-bold mb-2 text-primary">Infrastructure & Tools</div>
   <ul class="list-disc pl-4">
     <li>Database (MySQL, PostgreSQL)</li>
-    <li>Deploy (Vercel, Docker, Railway)</li>
+    <li>Deploy (Vercel, Docker, digitalOcean, zeabur)</li>
     <li>Visualization (Tableau, matplotlib, PlotJS)</li>
   </ul>
 </div>

@@ -205,7 +205,7 @@ layout: two-cols
     <v-click>
     <div class="flex items-center gap-4 bg-gray-800 p-3 rounded-lg">
       <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center font-bold">4</div>
-      <div class="text-lg text-sm m-0 leading-tight"><strong>小型排放源豁免</strong><br/>(Small emitters exemption)</div>
+      <div class="text-lg"><strong>小型排放源豁免</strong><br/>(Small emitters exemption)</div>
     </div>
     </v-click>
   </div>
