@@ -34,14 +34,6 @@ useHead({
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <UButton
             size="xl"
-            icon="i-heroicons-play-circle"
-            to="/resume/resume/"
-            class="w-full sm:w-auto font-semibold"
-          >
-            Explore Slides
-          </UButton>
-          <UButton
-            size="xl"
             color="neutral"
             variant="solid"
             icon="i-simple-icons-github"
