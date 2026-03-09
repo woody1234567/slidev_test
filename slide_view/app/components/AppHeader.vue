@@ -42,6 +42,9 @@ const slideLinks = [
   ],
   [
     { label: 'IB Math', href: '/IB_math/IB_math_test/IB_math/', target: '_blank', external: true }
+  ],
+  [
+    { label: 'Interview: Model Training', href: '/interview/model_training_presentation/', target: '_blank', external: true }
   ]
 ]
 </script>
