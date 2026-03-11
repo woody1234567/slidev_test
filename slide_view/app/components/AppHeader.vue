@@ -15,36 +15,7 @@ const slideLinks = [
     { label: 'Resume', href: '/resume/resume/', target: '_blank', external: true },
     { label: 'thesis', href: '/resume/optimal_carbon_tax_slides/', target: '_blank', external: true },
     { label: 'FunNow', href: '/resume/final_report_slides/', target: '_blank', external: true }
-  ],
-  [
-    { label: 'Calculus 3.1', href: '/Calculus/Calculus_teaching_section_3/section3.1/', target: '_blank', external: true },
-    { label: 'Calculus 3.3', href: '/Calculus/Calculus_teaching_section_3/section3.3/', target: '_blank', external: true },
-    { label: 'Calculus 3.4', href: '/Calculus/Calculus_teaching_section_3/section3.4/', target: '_blank', external: true },
-    { label: 'Calculus 3.6', href: '/Calculus/Calculus_teaching_section_3/section3.6/', target: '_blank', external: true },
-    { label: 'Calculus 3.10', href: '/Calculus/Calculus_teaching_section_3/section3.10/', target: '_blank', external: true },
-    { label: 'Calculus 3.11', href: '/Calculus/Calculus_teaching_section_3/section3.11/', target: '_blank', external: true }
-  ],
-  [
-    { label: 'Calculus 4.1', href: '/Calculus/Calculus_teaching_section_4/section4.1/', target: '_blank', external: true },
-    { label: 'Calculus 4.2', href: '/Calculus/Calculus_teaching_section_4/section4.2/', target: '_blank', external: true },
-    { label: 'Calculus 4.3', href: '/Calculus/Calculus_teaching_section_4/section4.3/', target: '_blank', external: true },
-    { label: 'Calculus 4.4', href: '/Calculus/Calculus_teaching_section_4/section4.4/', target: '_blank', external: true },
-    { label: 'Calculus 4.5', href: '/Calculus/Calculus_teaching_section_4/section4.5/', target: '_blank', external: true },
-    { label: 'Calculus 4.7', href: '/Calculus/Calculus_teaching_section_4/section4.7/', target: '_blank', external: true },
-    { label: 'Calculus 4.9', href: '/Calculus/Calculus_teaching_section_4/section4.9/', target: '_blank', external: true }
-  ],
-  [
-    { label: 'Economics: Chapter 3', href: '/Economics/Economics_teaching/chap3/', target: '_blank', external: true },
-    { label: 'Economics: Chapter 5', href: '/Economics/Economics_teaching/chap5/', target: '_blank', external: true },
-    { label: 'Economics: Chapter 6', href: '/Economics/Economics_teaching/chap6/', target: '_blank', external: true },
-    { label: 'Economics: Chapter 7', href: '/Economics/Economics_teaching/chap7/', target: '_blank', external: true },
-    { label: 'Economics: Chapter 18', href: '/Economics/Economics_teaching/chap18/', target: '_blank', external: true }
-  ],
-  [
-    { label: 'IB Math', href: '/IB_math/IB_math_test/IB_math/', target: '_blank', external: true }
-  ],
-  [
-    { label: 'Interview: Model Training', href: '/interview/model_training_presentation/', target: '_blank', external: true }
+    { label: 'interview', href: '/resume/interview/', target: '_blank', external: true }
   ]
 ]
 </script>
