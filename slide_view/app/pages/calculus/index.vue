@@ -3,13 +3,13 @@ const presentations = [
   {
     title: 'Calculus Section 3',
     description: 'Integral calculus and its applications in practice.',
-    link: '/Calculus/Calculus_teaching_section_3/',
+    link: '/calculus/3',
     icon: 'i-heroicons-chart-bar'
   },
   {
     title: 'Calculus Section 4',
     description: 'Advanced differentiation techniques and multivariable calculus.',
-    link: '/Calculus/Calculus_teaching_section_4/',
+    link: '/calculus/4',
     icon: 'i-heroicons-variable'
   }
 ]
@@ -61,7 +61,7 @@ useHead({
             block
             icon="i-heroicons-arrow-top-right-on-square-20-solid"
           >
-            Open Presentation
+            View Slides
           </UButton>
         </template>
       </UCard>
