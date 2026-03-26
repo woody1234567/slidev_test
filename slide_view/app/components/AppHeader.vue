@@ -12,11 +12,11 @@ const isDark = computed({
 
 const slideLinks = [
   [
-    { label: 'Resume', href: '/resume/resume/', target: '_blank', external: true },
-    { label: 'thesis', href: '/resume/optimal_carbon_tax_slides/', target: '_blank', external: true },
-    { label: 'FunNow', href: '/resume/final_report_slides/', target: '_blank', external: true }
-    { label: 'interview', href: '/resume/interview/', target: '_blank', external: true }
-  ] 
+    { label: 'Calculus', to: '/calculus', icon: 'i-heroicons-chart-bar' },
+    { label: 'Economics', to: '/economics', icon: 'i-heroicons-banknotes' },
+    { label: 'IB Math', to: '/ib-math', icon: 'i-heroicons-calculator' },
+    { label: 'Resume & Projects', to: '/resume', icon: 'i-heroicons-user-circle' }
+  ]
 ]
 </script>
 
