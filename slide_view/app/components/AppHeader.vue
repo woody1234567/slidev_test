@@ -16,7 +16,7 @@ const slideLinks = [
     { label: 'thesis', href: '/resume/optimal_carbon_tax_slides/', target: '_blank', external: true },
     { label: 'FunNow', href: '/resume/final_report_slides/', target: '_blank', external: true }
     { label: 'interview', href: '/resume/interview/', target: '_blank', external: true }
-  ]
+  ] 
 ]
 </script>
 
