@@ -55,7 +55,6 @@ useHead({
         <template #footer>
           <UButton
             :to="item.link"
-            target="_blank"
             color="primary"
             variant="solid"
             block

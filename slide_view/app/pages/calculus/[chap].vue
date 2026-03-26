@@ -60,9 +60,9 @@ useHead({
           class="group hover:ring-2 hover:ring-primary-500 transition-all duration-300 bg-white/50 dark:bg-gray-900/50 backdrop-blur"
         >
           <template #header>
-            <div class="flex items-center gap-3">
-              <UBadge color="primary" variant="subtle">Section {{ section.id }}</UBadge>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors line-clamp-1">
+            <div class="flex items-start gap-3">
+              <UBadge color="primary" variant="subtle" class="mt-0.5 shrink-0 whitespace-nowrap">Section {{ section.id }}</UBadge>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                 {{ section.title }}
               </h3>
             </div>
