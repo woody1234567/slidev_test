@@ -3,7 +3,7 @@ const presentations = [
   {
     title: 'IB Math Test',
     description: 'International Baccalaureate mathematics resources and revision.',
-    link: '/IB_math/IB_math_test/',
+    link: '/IB_math/IB_math/',
     icon: 'i-heroicons-calculator'
   }
 ]
